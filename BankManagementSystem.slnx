@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="../BankManagementSystem.Business/BankManagementSystem.Business.csproj" Id="90e9aa74-fb31-4758-aa9d-f5de8f22ac40" />
+  <Project Path="../BankManagementSystem.Data/BankManagementSystem.Data.csproj" Id="c008ad36-bbb3-46af-8aaa-ee00e11d3969" />
+  <Project Path="BankManagementSystem.csproj" />
+</Solution>
