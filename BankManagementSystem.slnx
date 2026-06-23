@@ -1,5 +1,5 @@
 <Solution>
   <Project Path="BankManagementSystem.Business/BankManagementSystem.Business.csproj" />
-  <Project Path="BankManagementSystem.csproj" />
   <Project Path="BankManagementSystem.Data/BankManagementSystem.Data.csproj" />
+  <Project Path="BankManagementSystem.UI/BankManagementSystem.UI.csproj" />
 </Solution>
