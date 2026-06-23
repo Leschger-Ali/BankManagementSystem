@@ -1,5 +1,6 @@
-﻿using BankManagementSystem.AppStyle.Enums;
-namespace BankManagementSystem.AppStyle.Controls;
+﻿using BankManagementSystem.UI.AppStyle.Enums;
+
+namespace BankManagementSystem.UI.AppStyle.Controls;
 
 public class AppButton : Button
 {

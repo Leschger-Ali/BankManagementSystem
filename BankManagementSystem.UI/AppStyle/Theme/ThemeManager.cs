@@ -1,4 +1,4 @@
-﻿namespace BankManagementSystem.AppStyle.Theme;
+﻿namespace BankManagementSystem.UI.AppStyle.Theme;
 
 public enum ThemeMode
 {

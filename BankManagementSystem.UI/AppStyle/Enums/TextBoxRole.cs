@@ -1,4 +1,4 @@
-﻿namespace BankManagementSystem.AppStyle.Enums;
+﻿namespace BankManagementSystem.UI.AppStyle.Enums;
 
 public enum TextBoxRole
 {

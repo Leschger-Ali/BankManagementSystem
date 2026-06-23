@@ -1,6 +1,6 @@
-﻿using BankManagementSystem.AppStyle.Enums;
+﻿using BankManagementSystem.UI.AppStyle.Enums;
 
-namespace BankManagementSystem.AppStyle.Controls;
+namespace BankManagementSystem.UI.AppStyle.Controls;
 
 public class AppPanel : Panel
 {

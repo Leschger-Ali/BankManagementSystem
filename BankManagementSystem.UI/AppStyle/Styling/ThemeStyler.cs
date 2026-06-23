@@ -1,9 +1,8 @@
-﻿
-using BankManagementSystem.AppStyle.Controls;
-using BankManagementSystem.AppStyle.Enums;
-using BankManagementSystem.AppStyle.Theme;
+﻿using BankManagementSystem.UI.AppStyle.Controls;
+using BankManagementSystem.UI.AppStyle.Enums;
+using BankManagementSystem.UI.AppStyle.Theme;
 
-namespace BankManagementSystem.AppStyle.Styling;
+namespace BankManagementSystem.UI.AppStyle.Styling;
 
 public static class ThemeStyler
 {

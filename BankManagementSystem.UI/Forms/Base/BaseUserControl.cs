@@ -1,5 +1,5 @@
-﻿using BankManagementSystem.AppStyle.Styling;
-using BankManagementSystem.AppStyle.Theme;
+﻿using BankManagementSystem.UI.AppStyle.Styling;
+using BankManagementSystem.UI.AppStyle.Theme;
 
 namespace BankManagementSystem.Forms.Base
 {

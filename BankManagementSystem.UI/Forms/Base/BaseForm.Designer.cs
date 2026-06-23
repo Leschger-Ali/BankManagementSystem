@@ -1,6 +1,8 @@
-﻿namespace BankManagementSystem
-{
-    partial class BaseForm
+﻿using BankManagementSystem.UI.AppStyle.Controls;
+
+namespace BankManagementSystem.UI;
+
+partial class BaseForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,14 +31,14 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            pnlSidebar = new BankManagementSystem.AppStyle.Controls.AppPanel();
-            btnThemeToggle = new BankManagementSystem.AppStyle.Controls.AppButton();
-            lblCurrentUhr = new BankManagementSystem.AppStyle.Controls.AppLabel();
-            lblMainDate = new BankManagementSystem.AppStyle.Controls.AppLabel();
-            pbBankIcon = new BankManagementSystem.AppStyle.Controls.AppPictureBox();
+            pnlSidebar = new AppPanel();
+            btnThemeToggle = new AppButton();
+            lblCurrentUhr = new AppLabel();
+            lblMainDate = new AppLabel();
+            pbBankIcon = new AppPictureBox();
             tmrBaseForm = new System.Windows.Forms.Timer(components);
-            btnClose = new BankManagementSystem.AppStyle.Controls.AppButton();
-            btnMinimize = new BankManagementSystem.AppStyle.Controls.AppButton();
+            btnClose = new AppButton();
+            btnMinimize = new AppButton();
             pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbBankIcon).BeginInit();
             SuspendLayout();
@@ -71,6 +73,7 @@
             // lblCurrentUhr
             // 
             lblCurrentUhr.AutoSize = true;
+            lblCurrentUhr.BackColor = Color.FromArgb(22, 25, 32);
             lblCurrentUhr.ForeColor = Color.FromArgb(229, 196, 131);
             lblCurrentUhr.Location = new Point(77, 438);
             lblCurrentUhr.Name = "lblCurrentUhr";
@@ -82,6 +85,7 @@
             // lblMainDate
             // 
             lblMainDate.AutoSize = true;
+            lblMainDate.BackColor = Color.FromArgb(22, 25, 32);
             lblMainDate.ForeColor = Color.FromArgb(229, 196, 131);
             lblMainDate.Location = new Point(39, 403);
             lblMainDate.Name = "lblMainDate";
@@ -159,7 +163,7 @@
             ResumeLayout(false);
         }
 
-        #endregion
+        #endregion      
         private AppStyle.Controls.AppPanel pnlSidebar;
         private AppStyle.Controls.AppPictureBox pbBankIcon;
         private AppStyle.Controls.AppLabel lblMainDate;
@@ -169,4 +173,5 @@
         private AppStyle.Controls.AppButton btnClose;
         private AppStyle.Controls.AppButton btnMinimize;
     }
-}
+    
+

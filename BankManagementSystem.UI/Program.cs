@@ -1,3 +1,5 @@
+using BankManagementSystem.UI;
+
 namespace BankManagementSystem
 {
     internal static class Program

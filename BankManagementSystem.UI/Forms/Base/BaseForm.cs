@@ -1,9 +1,9 @@
-using BankManagementSystem.AppStyle.Enums;
-using BankManagementSystem.AppStyle.Styling;
-using BankManagementSystem.AppStyle.Theme;
 using System.Runtime.InteropServices;
+using BankManagementSystem.UI.AppStyle.Enums;
+using BankManagementSystem.UI.AppStyle.Styling;
+using BankManagementSystem.UI.AppStyle.Theme;
 
-namespace BankManagementSystem;
+namespace BankManagementSystem.UI; 
 
 public partial class BaseForm : Form
 {
@@ -11,6 +11,8 @@ public partial class BaseForm : Form
     {
         InitializeComponent();
     }
+
+
 
     protected override void OnLoad(EventArgs e)
     {
