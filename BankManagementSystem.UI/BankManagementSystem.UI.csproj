@@ -6,8 +6,12 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-	  <RootNamespace>BankManagementSystem.UI</RootNamespace>
+    <RootNamespace>BankManagementSystem.UI</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.1" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BankManagementSystem.Business\BankManagementSystem.Business.csproj" />

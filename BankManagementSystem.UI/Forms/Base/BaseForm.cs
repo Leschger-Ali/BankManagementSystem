@@ -1,9 +1,9 @@
-using System.Runtime.InteropServices;
 using BankManagementSystem.UI.AppStyle.Enums;
 using BankManagementSystem.UI.AppStyle.Styling;
 using BankManagementSystem.UI.AppStyle.Theme;
+using System.Runtime.InteropServices;
 
-namespace BankManagementSystem.UI; 
+namespace BankManagementSystem.UI;
 
 public partial class BaseForm : Form
 {
@@ -104,12 +104,12 @@ public partial class BaseForm : Form
         CloseAndMinimizeButton();
         UpdateThemeToggleIcon();
     }
-    private void btnClose_Click(object sender, EventArgs e)
+    public void btnClose_Click(object sender, EventArgs e)
     {
         this.Close();
     }
 
-    private void btnMinimize_Click(object sender, EventArgs e)
+    public void btnMinimize_Click(object sender, EventArgs e)
     {
         this.WindowState = FormWindowState.Minimized;
     }
@@ -139,9 +139,14 @@ public partial class BaseForm : Form
         SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
     }
 
+
+
     // to move the form ↑
 
 
+    private void pbBankIcon_Click(object sender, EventArgs e)
+    {
 
+    }
 
 }

@@ -99,6 +99,20 @@ public static class ThemeStyler
 
         button.UseVisualStyleBackColor = false;
         button.FlatStyle = FlatStyle.Flat;
+
+        if (button.Role == ButtonRole.Icon)
+        {
+            button.FlatAppearance.BorderSize = 0;
+            button.BackColor = palette.FormBackground;
+            button.ForeColor = palette.PrimaryText;
+
+            button.FlatAppearance.BorderColor = palette.FormBackground;
+            button.FlatAppearance.MouseOverBackColor = palette.FormBackground;
+            button.FlatAppearance.MouseDownBackColor = palette.FormBackground;
+
+            return;
+        }
+
         button.FlatAppearance.BorderSize = 1;
         button.ForeColor = palette.ButtonText;
 

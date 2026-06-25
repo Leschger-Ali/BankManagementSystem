@@ -79,7 +79,9 @@ public static class AppTheme
         HoverBorder = Color.FromArgb(37, 99, 235),
 
         // Sidebar
-        SidebarBackground = Color.FromArgb(15, 23, 42),
+        //SidebarBackground = Color.FromArgb(15, 23, 42),
+        SidebarBackground = Color.FromArgb(22, 25, 32),
+        
 
         // DataGridView
         GridBackground = Color.FromArgb(255, 255, 255),

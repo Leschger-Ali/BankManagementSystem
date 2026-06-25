@@ -7,5 +7,6 @@ public enum ButtonRole
     Success,
     Danger,
     Warning,
+    Icon,
     Custom
 }
