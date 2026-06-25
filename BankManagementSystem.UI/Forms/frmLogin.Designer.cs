@@ -42,7 +42,7 @@
             appLabel2 = new BankManagementSystem.UI.AppStyle.Controls.AppLabel();
             appLabel1 = new BankManagementSystem.UI.AppStyle.Controls.AppLabel();
             appLabel3 = new BankManagementSystem.UI.AppStyle.Controls.AppLabel();
-            lblTimes = new BankManagementSystem.UI.AppStyle.Controls.AppLabel();
+            lblLoginStatus = new BankManagementSystem.UI.AppStyle.Controls.AppLabel();
             ((System.ComponentModel.ISupportInitialize)pbBankIcon).BeginInit();
             pnlSidebar.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -85,8 +85,8 @@
             // lblCurrentUhr
             // 
             lblCurrentUhr.Location = new Point(69, 467);
-            lblCurrentUhr.Size = new Size(75, 21);
-            lblCurrentUhr.Text = "10:12:11";
+            lblCurrentUhr.Size = new Size(85, 21);
+            lblCurrentUhr.Text = "20:02:09";
             // 
             // pnlSidebar
             // 
@@ -95,6 +95,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(lblLoginStatus);
             groupBox1.Controls.Add(lblPassword);
             groupBox1.Controls.Add(lblUsernameError);
             groupBox1.Controls.Add(btnTogglePassword);
@@ -110,7 +111,7 @@
             groupBox1.ForeColor = Color.FromArgb(229, 196, 131);
             groupBox1.Location = new Point(293, 114);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(469, 420);
+            groupBox1.Size = new Size(460, 484);
             groupBox1.TabIndex = 47;
             groupBox1.TabStop = false;
             groupBox1.Text = "Log in to your Account";
@@ -187,13 +188,14 @@
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(51, 337);
+            btnLogin.Location = new Point(51, 344);
             btnLogin.Name = "btnLogin";
             btnLogin.Role = AppStyle.Enums.ButtonRole.Primary;
             btnLogin.Size = new Size(106, 37);
             btnLogin.TabIndex = 4;
             btnLogin.Text = "Log in";
             btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // txtPassword
             // 
@@ -251,23 +253,23 @@
             appLabel3.TabIndex = 4;
             appLabel3.Text = "LUMINA BANK";
             // 
-            // lblTimes
+            // lblLoginStatus
             // 
-            lblTimes.AutoSize = true;
-            lblTimes.ForeColor = Color.Red;
-            lblTimes.Location = new Point(293, 552);
-            lblTimes.Name = "lblTimes";
-            lblTimes.Role = AppStyle.Enums.LabelRole.Custom;
-            lblTimes.Size = new Size(59, 21);
-            lblTimes.TabIndex = 48;
-            lblTimes.Text = "Times";
+            lblLoginStatus.AutoSize = true;
+            lblLoginStatus.ForeColor = Color.Red;
+            lblLoginStatus.Location = new Point(51, 409);
+            lblLoginStatus.Name = "lblLoginStatus";
+            lblLoginStatus.Role = AppStyle.Enums.LabelRole.Custom;
+            lblLoginStatus.Size = new Size(122, 24);
+            lblLoginStatus.TabIndex = 48;
+            lblLoginStatus.Text = "Login Status";
+            lblLoginStatus.Visible = false;
             // 
             // frmLogin
             // 
             AutoScaleDimensions = new SizeF(10F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(783, 634);
-            Controls.Add(lblTimes);
             Controls.Add(appLabel3);
             Controls.Add(groupBox1);
             Font = new Font("Georgia", 10.5F);
@@ -281,7 +283,6 @@
             Controls.SetChildIndex(btnMinimize, 0);
             Controls.SetChildIndex(groupBox1, 0);
             Controls.SetChildIndex(appLabel3, 0);
-            Controls.SetChildIndex(lblTimes, 0);
             ((System.ComponentModel.ISupportInitialize)pbBankIcon).EndInit();
             pnlSidebar.ResumeLayout(false);
             pnlSidebar.PerformLayout();
@@ -303,7 +304,7 @@
         private AppStyle.Controls.AppLabel appLabel4;
         private AppStyle.Controls.AppLabel appLabel5;
         private AppStyle.Controls.AppCheckBox chkRememberMe;
-        private AppStyle.Controls.AppLabel lblTimes;
+        private AppStyle.Controls.AppLabel lblLoginStatus;
         private AppStyle.Controls.AppButton btnTogglePassword;
         private AppStyle.Controls.AppLabel lblUsernameError;
         private AppStyle.Controls.AppLabel lblPassword;

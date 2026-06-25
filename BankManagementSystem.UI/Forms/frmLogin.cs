@@ -2,6 +2,8 @@
 
 public partial class frmLogin : BaseForm
 {
+    private int _loginFailedAttempts = 0;
+    private const int MaxLoginAttempts = 3;
     public frmLogin()
     {
         InitializeComponent();
@@ -9,7 +11,7 @@ public partial class frmLogin : BaseForm
 
     private void frmLogin_Load(object sender, EventArgs e)
     {
-
+        RememberMe();
     }
 
     private void btnTogglePassword_Click(object sender, EventArgs e)
@@ -96,7 +98,7 @@ public partial class frmLogin : BaseForm
 
         if (!IsValidPassword(password))
         {
-            ShowPasswordError("Password must be between 6 and 20 characters.");
+            ShowPasswordError("Password must be between 4 and 20 characters.");
             return false;
         }
 
@@ -108,7 +110,7 @@ public partial class frmLogin : BaseForm
         password = password.Trim();
         if (string.IsNullOrWhiteSpace(password))
             return false;
-        return password.Length >= 6 && password.Length <= 20;
+        return password.Length >= 4 && password.Length <= 20;
     }
     private void ShowPasswordError(string messege)
     {
@@ -134,7 +136,86 @@ public partial class frmLogin : BaseForm
     }
 
 
+    // Event handler for the Click event of the login button
 
+    private void btnLogin_Click(object sender, EventArgs e)
+    {
+        string username = txtUserName.Text.Trim();
+        string password = txtPassword.Text;
+
+        lblLoginStatus.Text = string.Empty;
+        lblLoginStatus.Visible = false;
+
+        if (!ValidateUsername() || !ValidatePassword())
+            return;
+
+        if (Business.Services.UserService.IsValidUser(username, password))
+        {
+            SaveRememberMeSettings(username, password);
+
+            MessageBox.Show("Login successful!");
+            return;
+        }
+
+        _loginFailedAttempts++;
+
+        int remainingAttempts = MaxLoginAttempts - _loginFailedAttempts;
+
+        if (remainingAttempts > 0)
+        {
+            lblLoginStatus.Text =
+                $"Invalid username or password.\n{remainingAttempts} attempt(s) remaining.";
+
+            lblLoginStatus.Visible = true;
+            return;
+        }
+
+        lblLoginStatus.Text =
+            "Invalid username or password.\nNo attempts remaining.";
+
+        lblLoginStatus.Visible = true;
+
+        MessageBox.Show(
+            "Too many failed login attempts.\nThe application will now close.",
+            "Login Failed",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Warning
+        );
+
+        Application.Exit();
+    }
+
+    // Event handler for the Click event of CheckBox to show/hide password
+
+    private void RememberMe()
+    {
+        if (Properties.Settings.Default.RememberMe)
+        {
+            txtUserName.Text = Properties.Settings.Default.SavedUsername;
+            txtPassword.Text = Properties.Settings.Default.SavedPassword;
+            chkRememberMe.Checked = true;
+        }
+    }
+
+
+
+    private void SaveRememberMeSettings(string username, string password)
+    {
+        if (chkRememberMe.Checked)
+        {
+            Properties.Settings.Default.RememberMe = true;
+            Properties.Settings.Default.SavedUsername = username;
+            Properties.Settings.Default.SavedPassword = password;
+        }
+        else
+        {
+            Properties.Settings.Default.RememberMe = false;
+            Properties.Settings.Default.SavedUsername = string.Empty;
+            Properties.Settings.Default.SavedPassword = string.Empty;
+        }
+
+        Properties.Settings.Default.Save();
+    }
 
 
 }

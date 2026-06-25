@@ -2,6 +2,10 @@
 
 public class DataBaseSettings
 {
-    public static string ConnectionString { get; set; } = "Server=localhost\\SQLEXPRESS;Database=master;Trusted_Connection=True;\r\n";
+    public static string ConnectionString { get; set; } =
+        "Server=Leschger\\SQLEXPRESS;" +
+        "Database=BankManagementSystemDB;" +
+        "Trusted_Connection=True;" +
+        "TrustServerCertificate=True;";
 }
 
